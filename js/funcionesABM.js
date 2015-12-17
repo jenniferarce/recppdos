@@ -40,6 +40,7 @@ function BorrarMascota(idParametro)
 		}
 	});
 	funcionAjax.done(function(retorno){
+		Mostrar('mostrarMascotas');
 		Mostrar('TraerMascotas');
 		//$("#informe").html("cantidad de eliminados "+ retorno);		
 	});
