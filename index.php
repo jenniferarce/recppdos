@@ -30,15 +30,11 @@
     <![endif]-->
 
     <!-- media queries css -->
-<!--
-    <script src="components/jquery/dist/jquery.min.js"></script>
+    <!--<script src="components/jquery/dist/jquery.min.js"></script>-->
 
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script> para google maps-->
-
-   <!-- <script type="text/javascript" src="js/funciones.js"></script>
+    <script type="text/javascript" src="js/funciones.js"></script>
     <script type="text/javascript" src="js/funcionesABM.js"></script>
-    <script type="text/javascript" src="js/funcionesLogin.js"></script>
-    <script type="text/javascript" src="js/funcionesRegistro.js"></script> -->
+
 </head>
 
 <body>
@@ -50,7 +46,6 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -67,10 +62,7 @@
                         <a onclick="Mostrar('mostrarregistro')" href="#">Registrarse</a>
                     </li>
                     <li>
-                        <a onclick="Mostrar('ingresoInvitados')" href="#">Ingresar invitados</a>
-                    </li>
-                    <li>
-                        <a onclick="Mostrar('mostrarInvitados')" href="#">Grilla</a>
+                        <a onclick="Mostrar('mostrarMascotas')" href="#">Mascotas</a>
                     </li>
                 </ul>
             </div>
