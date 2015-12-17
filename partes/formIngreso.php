@@ -16,12 +16,12 @@ if(!isset($_SESSION['registrado'])){  ?>
           </select>
           <br>
           <input type="password" id="clave" name="clave" class="form-control" title="Ingrese su contraseña" placeholder="Clave" required>
+          <select id="tipo" name="tipo" class="form-control" title="Elija el tipo de mascota" optional>
+            <option value=null></option>
+            <option value="Mascota">Mascota</option>
+            <option value="Guardian">Guardian</option>
+          </select>
           <br>
-          <!--<div class="checkbox">
-          <label>
-            <input type="checkbox" id="recordarme" checked> Recordame
-          </label>
-        </div>-->
         <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
       </form>
 

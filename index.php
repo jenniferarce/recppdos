@@ -49,6 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="">Home</a>
             </div>
@@ -64,6 +65,11 @@
                     <li>
                         <a onclick="Mostrar('mostrarMascotas')" href="#">Mascotas</a>
                     </li>
+                    <li>
+                        <a onclick="EditarMascota('6')" href="#">Mi mascota</a> 
+                        <!-- VER!! solo tiene que aparecer si ingresa a la cuenta // verificar como poner el id del que esta logueado-->
+                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -3,13 +3,13 @@
 <?php 
  
 session_start();
-if(!isset($_SESSION['registrado'])){  ?>
-    <div id="formRegistro" class="container">
+if(isset($_SESSION['registrado'])){  ?>
+    <div id="formMiMascota" class="container">
       <form class="form-ingreso" onsubmit="GuardarMascota();returnfalse;">
-        <h2 class="form-ingreso-heading">Ingrese sus datos</h2>
+        <h2 class="form-ingreso-heading">Mi mascota</h2>
           <input type="text" id="nombre" name="nombre" class="form-control" title="Ingrese un nombre" placeholder="Nombre" required autofocus><br>
            <br>
-           <select id="clase" name="clase" class="form-control" title="Elija la clase de mascota" required>
+           <select id="clase" name="clase" class="form-control" readonly disabled="disabled" required> <!-- no se tiene que modificar -->
             <option value="Perro">Perro</option>
             <option value="Gato">Gato</option>
           </select>
@@ -21,15 +21,13 @@ if(!isset($_SESSION['registrado'])){  ?>
             <option value="Guardian">Guardian</option>
           </select>
           <br>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Registrarme</button>
+          <input readonly   type="hidden"    id="id" class="form-control" >
+          <button class="btn btn-lg btn-success btn-block" type="submit"> <span class='glyphicon glyphicon-pencil'>&nbsp;</span>Editar</button>
       </form>
 
     </div> <!-- /container -->
 
-  <?php }else{    echo"<h3>usted '".$_SESSION['registrado']."' esta logeado, no puede registrarse. </h3>";?>         
-    <button onclick="deslogear()" class="btn btn-lg btn-danger btn-block" type="button"><span class="glyphicon glyphicon-off">&nbsp;</span>Deslogearme</button>
- <script type="text/javascript">
- </script>
-<?php  
+  <?php }
+  else{ echo "<h4 class='widgettitle'>Usted no esta logueado.</h4>";}
 
-} ?>
+   ?>

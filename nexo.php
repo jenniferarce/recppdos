@@ -26,8 +26,12 @@ switch ($queHago) {
 			$mascota->nombre=$_POST['nombre'];
 			$mascota->clase=$_POST['clase'];
 			$mascota->clave=$_POST['clave'];
+			$mascota->tipo=$_POST['tipo'];
 			$cantidad=$mascota->GuardarMascota();
 			echo $cantidad;
+	break;
+	case 'EditarMascota':
+		include("partes/formMiMascota.php");
 	break;
 	case 'TraerMascotas':
 			$mascota=mascota::TraerMascotas();	

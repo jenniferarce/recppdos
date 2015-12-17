@@ -4,6 +4,7 @@ function GuardarMascota()
 		var nombre=$("#nombre").val();
 		var clase=$("#clase").val();
 		var clave=$("#clave").val();
+		var tipo=$("#tipo").val();
 
 		var funcionAjax=$.ajax({
 		url:"nexo.php",
@@ -13,7 +14,8 @@ function GuardarMascota()
 			id:id,
 			nombre:nombre,
 			clase:clase,
-			clave:clave
+			clave:clave,
+			tipo:tipo
 		}
 	});
 	funcionAjax.done(function(retorno){
@@ -26,7 +28,7 @@ function GuardarMascota()
 	});	
 }//fin GuardarMascota
 
-/*function BorrarMascota(idParametro) //VER!!!!!!!!!
+function BorrarMascota(idParametro)
 {
 	//alert(idParametro);
 		var funcionAjax=$.ajax({
@@ -48,7 +50,7 @@ function GuardarMascota()
 
 function EditarMascota(idParametro)
 {
-	//votacion(); //PONER UN FORM PARA MODIFICAR DATOS!!!!!!!
+	Mostrar('EditarMascota');
 	var funcionAjax=$.ajax({
 		url:"nexo.php",
 		type:"post",
@@ -65,6 +67,7 @@ function EditarMascota(idParametro)
 		$("#nombre").val(mascota.nombre);
 		$("#clase").val(mascota.clase);
 		$("#clave").val(mascota.clave)
+		$("#tipo").val(mascota.tipo);
 	});
 	funcionAjax.fail(function(retorno){	
 		$("#informe").html(retorno.responseText);

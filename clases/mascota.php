@@ -5,18 +5,20 @@ class mascota
 	public $nombre;
 	public $clase;
 	public $clave;
+	public $tipo;
 
 public function InsertarMascota()
 	 {
 				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-				$consulta =$objetoAccesoDato->RetornarConsulta("CALL InsertarMascota(:nombre,:clase,:clave)");
+				$consulta =$objetoAccesoDato->RetornarConsulta("CALL InsertarMascota(:nombre,:clase,:clave,:tipo)");
 				$consulta->bindvalue(':nombre',$this->nombre,PDO::PARAM_STR);
 				$consulta->bindValue(':clase',$this->clase, PDO::PARAM_STR);
 				$consulta->bindValue(':clave',$this->clave, PDO::PARAM_STR);
+				$consulta->bindValue(':tipo',$this->tipo, PDO::PARAM_STR);
 				$consulta->execute();
 				return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	 }
-	/*public function BorrarMascota()
+	public function BorrarMascota()
 	 {
 	 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			$consulta =$objetoAccesoDato->RetornarConsulta("CALL BorrarMascota(:id)");	
@@ -27,15 +29,16 @@ public function InsertarMascota()
 	 public function ModificarMascota()
 	 {
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("CALL Modificarmascota(:nombre,:clase,:clave,:id)");
+			$consulta =$objetoAccesoDato->RetornarConsulta("CALL ModificarMascota(:nombre,:clase,:clave,:tipo,:id)");
 			$consulta->bindvalue(':nombre',$this->nombre,PDO::PARAM_STR);
 			$consulta->bindValue(':clase',$this->clase, PDO::PARAM_STR);
 			$consulta->bindValue(':clave',$this->clave, PDO::PARAM_STR);
+			$consulta->bindValue(':tipo',$this->tipo, PDO::PARAM_STR);
 			$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);
 			return $consulta->execute();
 			return $objetoAccesoDato->RetornarUltimoIdInsertado();
 	 }
-*/
+
 	public function GuardarMascota()
 	 {
 
