@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-12-2015 a las 03:54:46
+-- Tiempo de generación: 17-12-2015 a las 07:48:36
 -- Versión del servidor: 5.6.25
 -- Versión de PHP: 5.6.11
 
@@ -24,6 +24,10 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `BorrarMascota`(IN `idd` INT)
+    NO SQL
+delete FROM mascota where id=idd$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertarMascota`(IN `nom` VARCHAR(50), IN `clas` VARCHAR(50), IN `clav` VARCHAR(50), IN `tip` VARCHAR(50))
     NO SQL
 insert into mascota(nombre,clase,clave,tipo) VALUES(nom,clas,clav,tip)$$
@@ -58,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `mascota` (
   `clase` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `clave` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `tipo` varchar(50) COLLATE utf8_spanish2_ci DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `mascota`
@@ -66,10 +70,11 @@ CREATE TABLE IF NOT EXISTS `mascota` (
 
 INSERT INTO `mascota` (`id`, `nombre`, `clase`, `clave`, `tipo`) VALUES
 (1, 'lola', 'Perro', '123', NULL),
-(2, 'Pepe', 'Gato', '123', NULL),
-(4, 'tito', 'Perro', '456', 'Guardian'),
+(2, 'Pepe', 'Gato', '123', 'Mascota'),
 (5, 'tere', 'Perro', '789', NULL),
-(6, 'lila', 'Gato', '123', 'Mascota');
+(6, 'lila', 'Gato', '123', 'Mascota'),
+(7, 'riri', 'Perro', '456', 'Guardian'),
+(10, 'Tito', 'Perro', '123', 'Guardian');
 
 --
 -- Índices para tablas volcadas
@@ -90,7 +95,7 @@ ALTER TABLE `mascota`
 -- AUTO_INCREMENT de la tabla `mascota`
 --
 ALTER TABLE `mascota`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

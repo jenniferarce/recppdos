@@ -22,9 +22,9 @@ public function InsertarMascota()
 	 {
 	 		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			$consulta =$objetoAccesoDato->RetornarConsulta("CALL BorrarMascota(:id)");	
-				$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);		
-				$consulta->execute();
-				return $consulta->rowCount();
+			$consulta->bindValue(':id',$this->id, PDO::PARAM_INT);		
+			$consulta->execute();
+			return $consulta->rowCount();
 	 } 
 	 public function ModificarMascota()
 	 {

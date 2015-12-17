@@ -41,7 +41,7 @@ function BorrarMascota(idParametro)
 	});
 	funcionAjax.done(function(retorno){
 		Mostrar('TraerMascotas');
-		$("#informe").html("cantidad de eliminados "+ retorno);		
+		//$("#informe").html("cantidad de eliminados "+ retorno);		
 	});
 	funcionAjax.fail(function(retorno){	
 		$("#informe").html(retorno.responseText);	
@@ -50,6 +50,7 @@ function BorrarMascota(idParametro)
 
 function EditarMascota(idParametro)
 {
+	//alert(idParametro);
 	Mostrar('EditarMascota');
 	var funcionAjax=$.ajax({
 		url:"nexo.php",

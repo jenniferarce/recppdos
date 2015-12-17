@@ -27,7 +27,8 @@ if(isset($_SESSION['registrado'])){  ?>
 
     </div> <!-- /container -->
 
-  <?php }
+  <?php 
+}
   else{ echo "<h4 class='widgettitle'>Usted no esta logueado.</h4>";}
 
    ?>

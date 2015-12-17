@@ -1,5 +1,4 @@
 <?php 
-//REVISAR
 session_start();
 if(isset($_SESSION['registrado']))
 {

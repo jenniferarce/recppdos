@@ -55,7 +55,7 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" >
                     <li>
                         <a onclick="Mostrar('mostrarlogin')" href="#">Ingresar</a>
                     </li>
@@ -65,10 +65,21 @@
                     <li>
                         <a onclick="Mostrar('mostrarMascotas')" href="#">Mascotas</a>
                     </li>
-                    <li>
-                        <a onclick="EditarMascota('6')" href="#">Mi mascota</a> 
+                    
+                        <?php 
+                        require_once("clases/AccesoDatos.php");
+                        require_once("clases/mascota.php");
+                        session_start();
+                        if(isset($_SESSION['registrado']))
+                        {
+                            echo "<li>
+                                <a onclick='EditarMascota(".$_COOKIE['ident'].")' href='#'>Mi mascota</a>
+                                </li>";
+                        }//hace que aparezca solo si esta logueado ?>
+
+                      <!--"EditarMascota('6')" -->
                         <!-- VER!! solo tiene que aparecer si ingresa a la cuenta // verificar como poner el id del que esta logueado-->
-                    </li>
+                    
 
                 </ul>
             </div>
@@ -96,8 +107,6 @@
 
         <div class="row">
             <div class="col-sm-8" id="principal"><!--Van los forms que vienen de los botones-->
-                    
-                   <!-- <a class="btn btn-default btn-lg" href="#" onclick="mostrarlogin()">Call to Action &raquo;</a>-->
                 
             </div><!--principal-->
             <div class="col-sm-4">

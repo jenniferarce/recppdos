@@ -55,9 +55,9 @@ function deslogear()
 			//MostarBotones();
 			Mostrar('mostrarlogin');
 			$("#nombre").val("Sin nombre.");
-			/*$("#BotonLogin").html("Login<br>-Sesión-");
+			$("#BotonLogin").html("Login<br>-Sesión-");
 			$("#BotonLogin").removeClass("btn-danger");
-			$("#BotonLogin").addClass("btn-primary");	*/	
+			$("#BotonLogin").addClass("btn-primary");	
 	});	
 }//fin deslogear
 
